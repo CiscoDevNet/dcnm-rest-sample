@@ -19,6 +19,10 @@ manageLanSwitch.py:   sample code to change device management state
 
 discoverLanSwitch.py: sample code to discover ethernet switch 
 
+getSwitchCPU.py:      sample code to retrive CPU chart for a specific switch
+
+getAllAlarm.py:       sample code to retrive all outstanding alarms with associated events
+
 Docs
 
 We have also provided examples for some common project docs (README, CONTRIBUTING, CODE_OF_CONDUCT, etc.).
