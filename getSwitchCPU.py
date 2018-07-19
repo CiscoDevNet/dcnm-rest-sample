@@ -73,7 +73,7 @@ def  getSwitchCPU(serverip, switchname, resttoken):
 restToken=getRestToken("admin", "nbv_12345", "10.157.35.59")
 print(restToken)
 
-# DCNM server ip, switch ip, device user name, device password, resetTotken
+# DCNM server ip, switch name, resetTotken
 getSwitchCPU("10.157.35.59", "sw172-22-47-20",restToken)
 
 
