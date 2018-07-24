@@ -38,15 +38,17 @@ def getRestToken(username, password, serverip):
   strArr=longstr.split("\"")
   return strArr[3]
 
-def  getAllAlarm(serverip, resttoken):
+def  getAllAlarm(serverip, resttoken, start, end):
   ssl._create_default_https_context = ssl._create_unverified_context
  
   conn = http.client.HTTPSConnection(serverip)
-
+  rangestr="items="+str(start)+"-"+str(end)
+  print(rangestr);
   headers = {
     'dcnm-token': resttoken,
     'content-type': "application/x-www-form-urlencoded",
-    'cache-control': "no-cache"
+    'cache-control': "no-cache",
+    'Range': rangestr
     }
 
 
@@ -56,13 +58,15 @@ def  getAllAlarm(serverip, resttoken):
   data = res.read()
   jsonstr=data.decode("utf-8")
   decoded = json.loads(jsonstr)
-  for x in decoded :
-    print("=============================================")
-    print(x['deviceName'])
-    print(x['deviceAttributes'])
-    print(x['message'])
-    print(x['lastScanTimeStamp'])
-    events = json.loads(x['associatedEvents'])
+  print("******************************************")
+  print(len(decoded));
+  for alarm in decoded :
+    print("=================ALARM=======================")
+    print(alarm['deviceName'])
+    print(alarm['deviceAttributes'])
+    print(alarm['message'])
+    print(alarm['lastScanTimeStamp'])
+    events = json.loads(alarm['associatedEvents'])
     descriptionStr=''
     severityStr=''
     for y in events :
@@ -70,15 +74,14 @@ def  getAllAlarm(serverip, resttoken):
             descriptionStr=y['description']
         if 'severity' in y :
             severityStr=y['severity']
+        print('    ------------EVENT------------------')
         print('    '+y['EventSwitch']+':'+y['EventType']+':'+descriptionStr+':'+severityStr)
   return
 
 
 # DCNM username, password, DCNM server ip address
-restToken=getRestToken("admin", "nbv12345", "172.28.164.141")
+restToken=getRestToken("admin", "cisco123", "172.23.244.229")
 print(restToken)
 
-# DCNM server ip,  resetTotken
-getAllAlarm("172.28.164.141", restToken)
-
-
+# DCNM server ip,  resetTotken start_idx end_idx
+getAllAlarm("172.23.244.229", restToken, 0, 10000)
