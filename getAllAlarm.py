@@ -5,7 +5,7 @@ import string
 import json
 
 __author__ = "Louis Jia"
-__copyright__ = "Copyright (C) 2018 Cisco System"
+__copyright__ = "Copyright (c) 2018 Cisco and/or its affiliates"
 
 def getRestToken(username, password, serverip):
   ssl._create_default_https_context = ssl._create_unverified_context
