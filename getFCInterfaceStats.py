@@ -33,10 +33,34 @@ def getRestToken(username, password, serverip):
 
   res = conn.getresponse()
   data = res.read()
-  print(data)
   longstr=data.decode("utf-8")
   strArr=longstr.split("\"")
   return strArr[3]
+
+def  getFabricId(serverip, switchip, resttoken):
+  ssl._create_default_https_context = ssl._create_unverified_context
+ 
+  conn = http.client.HTTPSConnection(serverip)
+
+  headers = {
+    'dcnm-token': resttoken,
+    'content-type': "application/x-www-form-urlencoded",
+    'cache-control': "no-cache"
+    }
+
+
+  conn.request("GET", "/fm/fmrest/inventory/switches/?name=foo1&navId=-1", headers=headers)
+
+  res = conn.getresponse()
+  data = res.read()
+  jsonstr=data.decode("utf-8")
+  decoded = json.loads(jsonstr)
+  
+  for x in decoded :
+      if ( x['ipAddress'] == switchip ) :
+        print(x['fid'])
+        return x['fid']
+  return -1
 
 def  getSwitchId(serverip, switchip, resttoken):
   ssl._create_default_https_context = ssl._create_unverified_context
@@ -87,7 +111,7 @@ def  getSwitchIntfId(serverip, switchid, interface, resttoken):
         return x['endPortId']
   return -1
 
-def  getInterfaceStats(serverip, interface, resttoken):
+def  getInterfaceStats(serverip, fid, interface, resttoken):
   ssl._create_default_https_context = ssl._create_unverified_context
  
   conn = http.client.HTTPSConnection(serverip)
@@ -99,7 +123,7 @@ def  getInterfaceStats(serverip, interface, resttoken):
     }
 
 
-  conn.request("GET", "/fm/fmrest/statistics/pmInterfaceChartData?interfaceDbId="+str(interface) + "&fid=10&interval=1&navId=-1", headers=headers)
+  conn.request("GET", "/fm/fmrest/statistics/pmInterfaceChartData?interfaceDbId="+str(interface) + "&fid="+str(fid)+ "&interval=1&navId=-1", headers=headers)
 
   res = conn.getresponse()
   data = res.read()
@@ -119,8 +143,12 @@ def  getInterfaceStats(serverip, interface, resttoken):
 #serverip
 server="172.10.10.10"
 # DCNM username, password, DCNM server ip address
-restToken=getRestToken("admin", "xxxxxxxx", server)
+restToken=getRestToken("admin", "xxxxxxx", server)
 print(restToken)
+
+# DCNM server ip, switch ip, resetTotken
+fid=getFabricId(server, "172.25.174.139",restToken)
+print(fid)
 
 # DCNM server ip, switch ip, resetTotken
 switchid=getSwitchId(server, "172.25.174.139",restToken)
@@ -129,7 +157,8 @@ print(switchid)
 intfid= getSwitchIntfId(server, switchid, "fc1/16", restToken)
 print(intfid)
 
-getInterfaceStats(server,intfid, restToken)
+#serverip fabric-id interface-id restToken
+getInterfaceStats(server,fid, intfid, restToken)
 
 
 
