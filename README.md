@@ -1,20 +1,18 @@
-# Introduction
+# Data Center Network Management REST Sample
 
-This is a collection of sample REST API client code for DCNM.
-For cisco dcnm software download and literacy pleaase refer to http://www.cisco.com/go/dcnm
+This is a collection of sample REST API client code for Cisco Data Center Network Manager (DCNM).
+For DCNM software download and documentation, please refer to [http://www.cisco.com/go/dcnm](http://www.cisco.com/go/dcnm)
 
-## sample_code
+## Prerequisites	
 Tested with Python3.6.4 and DCNM 10.3(1),10.4(1),10.4(2) and 11.0(1) 
 
-manageLanSwitch.py:   sample code to change device management state
+## Sample Code
 
-discoverLanSwitch.py: sample code to discover ethernet switch 
+* manageLanSwitch.py: sample code to change device management state
 
-getSwitchCPU.py:      sample code to retrive CPU chart for a specific switch
+* discoverLanSwitch.py: sample code to discover ethernet switch 
 
-getAllAlarm.py:       sample code to retrive all outstanding alarms with associated events
+* getSwitchCPU.py: sample code to retrieve CPU chart for a specific switch
 
-## Docs
-
-We have also provided examples for some common project docs (README, CONTRIBUTING, CODE_OF_CONDUCT, etc.).
+* getAllAlarm.py: sample code to retrieve all outstanding alarms and associated events
 
