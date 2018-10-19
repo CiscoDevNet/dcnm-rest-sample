@@ -18,5 +18,8 @@ Tested with Python3.6.4 and DCNM 10.3(1),10.4(1),10.4(2) and 11.0(1)
 
 * getFCInterfaceStats.py: sample code to retrive switch FC interface statistics
 
-* getSwitchCPU.py: Sample code to retrieve switch CPU utilization.
+* getSwitchCPU.py: Sample code to retrieve FC/SAN switch CPU utilization.
 
+* getLanSwitchCPU.py: Sample code to retrieve Ethernet/LAN switch CPU utilization.
+
+* getLanSwitchMem.py: Sample code to retrieve Ethernet/LAN switch Memory utilization.
