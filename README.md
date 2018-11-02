@@ -23,3 +23,5 @@ Tested with Python3.6.4 and DCNM 10.3(1),10.4(1),10.4(2) and 11.0(1)
 * getLanSwitchCPU.py: Sample code to retrieve Ethernet/LAN switch CPU utilization.
 
 * getLanSwitchMem.py: Sample code to retrieve Ethernet/LAN switch Memory utilization.
+
+* manageUser.py: Sample code to change local user password
