@@ -70,7 +70,7 @@ def  getSwitchCPU(serverip, switchname, resttoken):
 
 
 # DCNM username, password, DCNM server ip address
-restToken=getRestToken("admin", "nbv_12345", "10.157.35.59")
+restToken=getRestToken("admin", "xxxxx", "10.157.35.59")
 print(restToken)
 
 # DCNM server ip, switch name, resetTotken
