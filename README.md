@@ -16,6 +16,8 @@ Tested with Python3.6.4 and DCNM 10.3(1),10.4(1),10.4(2) and 11.0(1)
 
 * getAllAlarm.py: sample code to retrieve all outstanding alarms and associated events
 
+* getAllFCInterfaceStats.py: sample code to retrieve all FC interface stats
+
 * getFCInterfaceStats.py: sample code to retrive switch FC interface statistics
 
 * getSwitchCPU.py: Sample code to retrieve FC/SAN switch CPU utilization.
