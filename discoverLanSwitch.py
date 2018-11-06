@@ -59,10 +59,10 @@ def  discoverLanSwitch(serverip, switchip, device_username, device_password, res
 
 
 # DCNM username, password, DCNM server ip address
-restToken=getRestToken("admin", "nbv12345", "172.28.164.160")
+restToken=getRestToken("admin", "xxxxxxx", "172.28.164.160")
 print(restToken)
 
 # DCNM server ip, switch ip, device user name, device password, resetTotken
-discoverLanSwitch("172.28.164.160", "172.22.31.106", "admin","cisco123",restToken)
+discoverLanSwitch("172.28.164.160", "172.22.31.106", "admin","xxxxxxx",restToken)
 
 
