@@ -80,7 +80,7 @@ def  getAllAlarm(serverip, resttoken, start, end):
 
 
 # DCNM username, password, DCNM server ip address
-restToken=getRestToken("admin", "cisco123", "172.23.244.229")
+restToken=getRestToken("admin", "xxxxxx", "172.23.244.229")
 print(restToken)
 
 # DCNM server ip,  resetTotken start_idx end_idx
