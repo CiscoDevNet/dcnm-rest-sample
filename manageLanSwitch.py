@@ -69,7 +69,7 @@ def  changeSwitchManagement(serverip, switchip, state, resttoken):
 
 
 # DCNM username, password, DCNM server ip address
-restToken=getRestToken("admin", "nbv_12345", "172.22.241.185")
+restToken=getRestToken("admin", "xxxxxxxx", "172.22.241.185")
 print(restToken)
 
 # DCNM server ip, switch ip, management state( toggle between managed and unmanaged )
