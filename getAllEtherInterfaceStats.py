@@ -68,7 +68,7 @@ def  getAllEtherInterfaceStats(serverip, resttoken):
 #serverip
 server="10.157.34.138"
 # DCNM username, password, DCNM server ip address
-restToken=getRestToken("admin", "nbv_12345", server)
+restToken=getRestToken("admin", "xxxxxxx", server)
 print(restToken)
 
 
