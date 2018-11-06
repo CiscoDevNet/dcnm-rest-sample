@@ -58,13 +58,13 @@ def changePwd(serverip,dcnmusername,dcnmpassword,resttoken):
   return
 
 # DCNM username, password, DCNM server ip address
-restToken=getRestToken("admin", "nbv_12345", "10.157.34.131")
+restToken=getRestToken("admin", "xxxxxxx", "10.157.34.131")
 print(restToken)
 
 # DCNM serverip username, dcnm password, toekn
-changePwd("10.157.34.131", "test", "nbv_123456789" , restToken)
+changePwd("10.157.34.131", "test", "yyyyyyyy" , restToken)
 
-restToken=getRestToken("test", "nbv_123456789", "10.157.34.131")
+restToken=getRestToken("test", "yyyyyyyy", "10.157.34.131")
 print(restToken)
 
 
