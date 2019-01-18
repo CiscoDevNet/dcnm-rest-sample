@@ -31,3 +31,5 @@ Tested with Python3.6.4 and DCNM 10.3(1),10.4(1),10.4(2) and 11.0(1)
 * manageUser.py: Sample code to change local user password
 
 * getServerStatus.py: Sample code to get DCNM server running status
+ 
+* sanZoningSample.py: Sample code to create zone for init/target pair, activate zonset for fabric running enhanced zone mode.
