@@ -12,6 +12,8 @@ Tested with Python3.6.4 and DCNM 10.3(1),10.4(1),10.4(2) and 11.0(1)
 
 * discoverLanSwitch.py: sample code to discover ethernet switch 
 
+* discoverSanFabric.py: sample code to discover FC/San fabric
+
 * getSwitchCPU.py: sample code to retrieve CPU chart for a specific switch
 
 * getAllAlarm.py: sample code to retrieve all outstanding alarms and associated events
