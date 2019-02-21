@@ -118,15 +118,15 @@ def  getInterfaceStats(serverip, fid, rrdid, resttoken):
 
 
 #serverip
-server="10.157.34.108"
+server="10.10.10.10"
 # DCNM username, password, DCNM server ip address
-restToken=getRestToken("admin", "nbv_12345", server)
+restToken=getRestToken("admin", "xxxxxxx", server)
 print(restToken)
 
-fid=getFabricId(server, "mchinn-minishan", restToken)
+fid=getFabricId(server, "minishan", restToken)
 
 # DCNM server ip, switch ip, resetTotken
-rrdID=getRrdID(server, "mchinn-minishan", "fc1/2", restToken)
+rrdID=getRrdID(server, "minishan", "fc1/2", restToken)
 print(rrdID)
 
 #serverip fabric-id interface-id restToken
