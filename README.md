@@ -10,6 +10,8 @@ Tested with Python3.6.4 and DCNM 10.3(1),10.4(1),10.4(2) and 11.0(1)
 
 * manageLanSwitch.py: sample code to change device management state
 
+* deleteLanSwitch.py: sample code to delete an ethernet switch from DCNM
+
 * discoverLanSwitch.py: sample code to discover ethernet switch 
 
 * discoverSanFabric.py: sample code to discover FC/San fabric
