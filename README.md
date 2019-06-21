@@ -4,7 +4,7 @@ This is a collection of sample REST API client code for Cisco Data Center Networ
 For DCNM software download and documentation, please refer to [http://www.cisco.com/go/dcnm](http://www.cisco.com/go/dcnm)
 
 ## Prerequisites	
-Tested with Python3.6.4 and DCNM 10.3(1),10.4(1),10.4(2) and 11.0(1) 
+Tested with Python3.6.4 and DCNM 10.3(1),10.4(1),10.4(2) and 11.0(1), 11.1(1)
 
 ## Sample Code
 
